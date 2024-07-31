@@ -1,0 +1,9 @@
+D:\Project\AdventureGameProject\AGConsole\bin\Debug\AGConsole.exe.config
+D:\Project\AdventureGameProject\AGConsole\bin\Debug\AGConsole.exe
+D:\Project\AdventureGameProject\AGConsole\bin\Debug\AGConsole.pdb
+D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.csproj.AssemblyReference.cache
+D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.csproj.CoreCompileInputs.cache
+D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.exe
+D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.pdb
+D:\Project\AdventureGameProject\AGConsole\bin\Debug\System.Numerics.Vectors.dll
+D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.csproj.Up2Date
