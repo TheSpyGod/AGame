@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Numerics;
 using System.Windows.Forms;
 using Adventure;
-using AGConsole.Engine.Render;
 
 namespace AGConsole.Engine.Render
 {
@@ -18,9 +17,18 @@ namespace AGConsole.Engine.Render
 		private Control _control;
 		private ActorModel.Actor player;
 		private ActorModel.Actor enemy;
+		Random rand = new Random();
+		List<Vector2> directions = new List<Vector2>
+			{
+				new Vector2(-1, 0), // up
+                new Vector2(1, 0),  // down
+                new Vector2(0, -1), // left
+                new Vector2(0, 1)   // right
+            };
+
+
 
 		private const int DefaultCellSize = 20;
-
 		public Scene(Control control)
 		{
 			_control = control;
@@ -28,13 +36,12 @@ namespace AGConsole.Engine.Render
 			_control.Resize += OnResize;  // Handle resizing
 			InitializeScene();
 		}
-
 		private void InitializeScene()
 		{
 			UpdateMapDimensions();
 			map = GenerateMap();
-			player = new ActorModel.Actor { Location = new Vector2(1, 1) }; // Initialize player
-			enemy = new ActorModel.Actor { Location = new Vector2(5, 5) };  // Initialize enemy
+			player = new ActorModel.Actor { Location = new Vector2(1, 1) }; 
+			enemy = new ActorModel.Actor { Location = new Vector2(5, 5) };  
 			UpdateDrawing();
 		}
 
@@ -54,15 +61,7 @@ namespace AGConsole.Engine.Render
 		private char[,] GenerateMap()
 		{
 			var map = new char[_numCellsWidth, _numCellsHeight];
-			for (int i = 0; i < _numCellsWidth; i++)
-			{
-				for (int j = 0; j < _numCellsHeight; j++)
-				{
-					map[i, j] = ' '; // Initialize with empty spaces
-				}
-			}
-
-			Random rand = new Random();
+			
 			for (int i = 0; i < _numCellsWidth; i++)
 			{
 				for (int j = 0; j < _numCellsHeight; j++)
@@ -70,6 +69,10 @@ namespace AGConsole.Engine.Render
 					if (rand.Next(0, 10) < 2) // 20% chance of obstacle
 					{
 						map[i, j] = '*';
+					}
+					else
+					{
+						map[i, j] = ' ';
 					}
 				}
 			}
@@ -93,7 +96,7 @@ namespace AGConsole.Engine.Render
 					{
 						var x = i * _cellSize;
 						var y = j * _cellSize;
-						var vertices = new[]
+						var vertices = new[] //Draw Square
 						{
 							new PointF(x, y),
 							new PointF(x + _cellSize, y),
@@ -114,7 +117,7 @@ namespace AGConsole.Engine.Render
 				new PointF(playerPos.X + _cellSize, playerPos.Y + _cellSize),
 				new PointF(playerPos.X, playerPos.Y + _cellSize)
 			};
-			shapes.Add((playerVertices, Brushes.Blue)); // Brush for player
+			shapes.Add((playerVertices, Brushes.WhiteSmoke)); // Brush for player
 
 			// Draw enemy
 			var enemyPos = new PointF(enemy.Location.X * _cellSize, enemy.Location.Y * _cellSize);
@@ -136,8 +139,7 @@ namespace AGConsole.Engine.Render
 
 		public void HandleInput(Keys key)
 		{
-			bool exit = HandlePlayerMovement(key);
-			if (!exit)
+			if (!HandlePlayerMovement(key))
 			{
 				HandleEnemyTurn();
 				UpdateDrawing();
@@ -176,11 +178,19 @@ namespace AGConsole.Engine.Render
 		private void HandleEnemyTurn()
 		{
 			var nextStep = EnemyPathFinding(enemy.Location, player.Location);
-			if (nextStep != null)
+			float distance = Math.Abs(enemy.Location.X - player.Location.X) + Math.Abs(enemy.Location.Y - player.Location.Y);
+			var newDirection = enemy.Location + directions[rand.Next(0, 3)];
+
+			if (nextStep != null && distance < 5)
 			{
-				map[(int)enemy.Location.X, (int)enemy.Location.Y] = ' '; // Clear previous enemy position
 				enemy.Location = nextStep.Value;
-				map[(int)enemy.Location.X, (int)enemy.Location.Y] = 'E'; // Update enemy position
+			}
+			else if 
+			(newDirection.X >= 0 && newDirection.X < _numCellsWidth &&
+			 newDirection.Y >= 0 && newDirection.Y < _numCellsHeight &&
+			 map[(int)newDirection.X, (int)newDirection.Y] != '*')
+			{
+				enemy.Location = newDirection;
 			}
 		}
 
