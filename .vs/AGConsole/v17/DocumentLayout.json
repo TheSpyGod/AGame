@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|d:\\project\\adventuregameproject\\agconsole\\gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|D:\\Project\\AdventureGameProject\\AGConsole\\gamelogic\\viewmodels\\actormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\viewmodels\\actormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -25,6 +29,22 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActorModel.cs",
+              "DocumentMoniker": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\ViewModels\\ActorModel.cs",
+              "RelativeDocumentMoniker": "GameLogic\\ViewModels\\ActorModel.cs",
+              "ToolTip": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\ViewModels\\ActorModel.cs",
+              "RelativeToolTip": "GameLogic\\ViewModels\\ActorModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-07T19:18:01.767Z"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Scene.cs",
@@ -32,7 +52,7 @@
               "RelativeDocumentMoniker": "GameLogic\\Scene.cs",
               "ToolTip": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\Scene.cs",
               "RelativeToolTip": "GameLogic\\Scene.cs",
-              "ViewState": "AQIAAIwAAAAAAAAAAAAuwMAAAAAiAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAGUAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T12:21:18.44Z",
               "EditorCaption": ""

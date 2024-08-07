@@ -25,10 +25,7 @@ namespace AGConsole.Engine.Render
                 new Vector2(0, -1), // left
                 new Vector2(0, 1)   // right
             };
-
-
-
-		private const int DefaultCellSize = 20;
+		private const int DefaultCellSize = 15;
 		public Scene(Control control)
 		{
 			_control = control;
@@ -39,9 +36,9 @@ namespace AGConsole.Engine.Render
 		private void InitializeScene()
 		{
 			UpdateMapDimensions();
-			map = GenerateMap();
-			player = new ActorModel.Actor { Location = new Vector2(1, 1) }; 
-			enemy = new ActorModel.Actor { Location = new Vector2(5, 5) };  
+			GenerateMap();
+			player = new ActorModel.Actor { Location = new Vector2(1, 1), Health = 200, IsAlive = true}; 
+			enemy = new ActorModel.Actor { Location = new Vector2(20, 20), Health = 200, IsAlive = true};
 			UpdateDrawing();
 		}
 
@@ -60,13 +57,15 @@ namespace AGConsole.Engine.Render
 
 		private char[,] GenerateMap()
 		{
-			var map = new char[_numCellsWidth, _numCellsHeight];
-			
+			if (map == null)
+			{
+				map = new char[_numCellsWidth, _numCellsHeight];
+			}
 			for (int i = 0; i < _numCellsWidth; i++)
 			{
 				for (int j = 0; j < _numCellsHeight; j++)
 				{
-					if (rand.Next(0, 10) < 2) // 20% chance of obstacle
+					if (rand.Next(0, 10) < 2) 
 					{
 						map[i, j] = '*';
 					}
@@ -76,61 +75,32 @@ namespace AGConsole.Engine.Render
 					}
 				}
 			}
-
 			return map;
 		}
-
 		private void UpdateDrawing()
 		{
 			var shapes = new List<(PointF[], Brush)>();
-
-			// Clear previous shapes
 			_shapeDrawer.ClearShapes();
-
 			// Draw map
-			for (int i = 0; i < _numCellsWidth; i++)
-			{
-				for (int j = 0; j < _numCellsHeight; j++)
+				for (int i = 0; i < _numCellsWidth; i++)
 				{
-					if (map[i, j] == '*')
+					for (int j = 0; j < _numCellsHeight; j++)
 					{
-						var x = i * _cellSize;
-						var y = j * _cellSize;
-						var vertices = new[] //Draw Square
+						if (map[i, j] == '*')
 						{
-							new PointF(x, y),
-							new PointF(x + _cellSize, y),
-							new PointF(x + _cellSize, y + _cellSize),
-							new PointF(x, y + _cellSize)
-						};
-						shapes.Add((vertices, Brushes.Black)); // Use brush for obstacles
+							AddSquareShape(shapes, i, j, Brushes.Black);
+						}
 					}
 				}
+
+			AddSquareShape(shapes, (int)player.Location.X, (int)player.Location.Y, Brushes.WhiteSmoke); // Brush for player
+			if (enemy.IsAlive) AddSquareShape(shapes, (int)enemy.Location.X, (int)enemy.Location.Y, Brushes.Red);
+
+			if (player.Location.X == enemy.Location.X && player.Location.Y == enemy.Location.Y)
+			{
+				enemy.IsAlive = false;
 			}
 
-			// Draw player
-			var playerPos = new PointF(player.Location.X * _cellSize, player.Location.Y * _cellSize);
-			var playerVertices = new[]
-			{
-				playerPos,
-				new PointF(playerPos.X + _cellSize, playerPos.Y),
-				new PointF(playerPos.X + _cellSize, playerPos.Y + _cellSize),
-				new PointF(playerPos.X, playerPos.Y + _cellSize)
-			};
-			shapes.Add((playerVertices, Brushes.WhiteSmoke)); // Brush for player
-
-			// Draw enemy
-			var enemyPos = new PointF(enemy.Location.X * _cellSize, enemy.Location.Y * _cellSize);
-			var enemyVertices = new[]
-			{
-				enemyPos,
-				new PointF(enemyPos.X + _cellSize, enemyPos.Y),
-				new PointF(enemyPos.X + _cellSize, enemyPos.Y + _cellSize),
-				new PointF(enemyPos.X, enemyPos.Y + _cellSize)
-			};
-			shapes.Add((enemyVertices, Brushes.Red)); // Brush for enemy
-
-			// Add shapes to the drawer
 			foreach (var (vertices, brush) in shapes)
 			{
 				_shapeDrawer.AddShape(vertices, brush);
@@ -141,7 +111,7 @@ namespace AGConsole.Engine.Render
 		{
 			if (!HandlePlayerMovement(key))
 			{
-				HandleEnemyTurn();
+				if (enemy.IsAlive) HandleEnemyTurn();
 				UpdateDrawing();
 			}
 		}
@@ -165,9 +135,8 @@ namespace AGConsole.Engine.Render
 					if (newCol < _numCellsHeight - 1) newCol += 1;
 					break;
 				case Keys.Escape:
-					return true; // Exit
+					return true; 	
 			}
-
 			if (newRow >= 0 && newRow < _numCellsWidth && newCol >= 0 && newCol < _numCellsHeight && map[newRow, newCol] != '*')
 			{
 				player.Location = new Vector2(newRow, newCol);
@@ -181,7 +150,7 @@ namespace AGConsole.Engine.Render
 			float distance = Math.Abs(enemy.Location.X - player.Location.X) + Math.Abs(enemy.Location.Y - player.Location.Y);
 			var newDirection = enemy.Location + directions[rand.Next(0, 3)];
 
-			if (nextStep != null && distance < 5)
+			if (nextStep != null && distance < 5 && nextStep != player.Location)
 			{
 				enemy.Location = nextStep.Value;
 			}
@@ -192,6 +161,7 @@ namespace AGConsole.Engine.Render
 			{
 				enemy.Location = newDirection;
 			}
+			
 		}
 
 		private Vector2? EnemyPathFinding(Vector2 start, Vector2 target)
@@ -241,6 +211,18 @@ namespace AGConsole.Engine.Render
 				}
 			}
 			return null;
+		}
+		private void AddSquareShape(List<(PointF[], Brush)> shapes, int x, int y, Brush brush)
+		{
+			var topLeft = new PointF(x * _cellSize, y * _cellSize);
+			var vertices = new[]
+			{
+		topLeft,
+		new PointF(topLeft.X + _cellSize, topLeft.Y),
+		new PointF(topLeft.X + _cellSize, topLeft.Y + _cellSize),
+		new PointF(topLeft.X, topLeft.Y + _cellSize)
+		};
+			shapes.Add((vertices, brush));
 		}
 	}
 }
