@@ -8,11 +8,12 @@ namespace Adventure
 {
 	class ActorModel
 	{
-		public struct Actor
+		public class Actor
 		{
 			public string Name { get; set; }
 			public uint Health { get; set; }
 			public Vector2 Location { get; set; }
+			public bool IsAlive { get; set; }
 		}
 	}
 }
