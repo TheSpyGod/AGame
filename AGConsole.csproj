@@ -60,6 +60,8 @@
     <Compile Include="Engine\Render\RenderShapes.cs" />
     <Compile Include="Engine\Render\ShapeDrawer.cs" />
     <Compile Include="Entry.cs" />
+    <Compile Include="GameLogic\FightScene.cs" />
+    <Compile Include="GameLogic\OpenWrld.cs" />
     <Compile Include="GameLogic\Scene.cs" />
     <Compile Include="GameLogic\ViewModels\ActorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

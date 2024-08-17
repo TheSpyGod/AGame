@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Project\\AdventureGameProject\\AGConsole\\",
+  "WorkspaceRootPath": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|d:\\project\\adventuregameproject\\agconsole\\gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\gamelogic\\openwrld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\openwrld.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|D:\\Project\\AdventureGameProject\\AGConsole\\gamelogic\\viewmodels\\actormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\viewmodels\\actormodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|c:\\users\\compiler\\source\\repos\\thespygod\\agame\\gamelogic\\fightscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\fightscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBFC9079-4FDE-4643-8DC5-FD69408370E2}|AGConsole.csproj|solutionrelative:gamelogic\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -20,6 +24,20 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FightScene.cs",
+              "DocumentMoniker": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\FightScene.cs",
+              "RelativeDocumentMoniker": "GameLogic\\FightScene.cs",
+              "ToolTip": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\FightScene.cs",
+              "RelativeToolTip": "GameLogic\\FightScene.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T15:01:35.632Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -34,25 +52,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ActorModel.cs",
-              "DocumentMoniker": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\ViewModels\\ActorModel.cs",
-              "RelativeDocumentMoniker": "GameLogic\\ViewModels\\ActorModel.cs",
-              "ToolTip": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\ViewModels\\ActorModel.cs",
-              "RelativeToolTip": "GameLogic\\ViewModels\\ActorModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAACAAAA",
+              "DocumentIndex": 0,
+              "Title": "OpenWrld.cs",
+              "DocumentMoniker": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\OpenWrld.cs",
+              "RelativeDocumentMoniker": "GameLogic\\OpenWrld.cs",
+              "ToolTip": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\OpenWrld.cs",
+              "RelativeToolTip": "GameLogic\\OpenWrld.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAIwGMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T19:18:01.767Z"
+              "WhenOpened": "2024-08-17T13:28:46.836Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Scene.cs",
-              "DocumentMoniker": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\Scene.cs",
+              "DocumentMoniker": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\Scene.cs",
               "RelativeDocumentMoniker": "GameLogic\\Scene.cs",
-              "ToolTip": "D:\\Project\\AdventureGameProject\\AGConsole\\GameLogic\\Scene.cs",
+              "ToolTip": "C:\\Users\\COMPILER\\source\\repos\\TheSpyGod\\AGame\\GameLogic\\Scene.cs",
               "RelativeToolTip": "GameLogic\\Scene.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAAAGUAAAADAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-31T12:21:18.44Z",
               "EditorCaption": ""

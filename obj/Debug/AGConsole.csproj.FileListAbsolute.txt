@@ -7,3 +7,12 @@ D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.exe
 D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.pdb
 D:\Project\AdventureGameProject\AGConsole\bin\Debug\System.Numerics.Vectors.dll
 D:\Project\AdventureGameProject\AGConsole\obj\Debug\AGConsole.csproj.Up2Date
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\obj\Debug\AGConsole.csproj.AssemblyReference.cache
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\obj\Debug\AGConsole.csproj.CoreCompileInputs.cache
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\bin\Debug\AGConsole.exe.config
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\bin\Debug\AGConsole.exe
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\bin\Debug\AGConsole.pdb
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\obj\Debug\AGConsole.csproj.Up2Date
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\obj\Debug\AGConsole.exe
+C:\Users\COMPILER\Source\Repos\TheSpyGod\AGame\obj\Debug\AGConsole.pdb
